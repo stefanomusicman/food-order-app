@@ -1,3 +1,8 @@
+.primary-container {
+    width: 100%;
+    margin-bottom: 12%;
+}
+
 .header {
     position: fixed;
     display: flex;
