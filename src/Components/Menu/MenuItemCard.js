@@ -4,12 +4,16 @@ import classes from './MenuItemCard.module.css';
 
 const MenuItemCard = (props) => {
 
+    const price = `${props.price.toFixed(2)}$`
+
     return(
         <div className={classes['card-container']}>
-            <img src={props.image} alt="menu-item"/>
+            <div className={classes['image-container']}>
+                <img src={props.image.type} alt="menu-item" />
+            </div>
             <h3>{props.name}</h3>
-            <h4>{`${props.price}$`}</h4>
-            <AddToCartButton />
+            <h4>{price}</h4>
+            <AddToCartButton name={props.name} price={props.price} />
         </div>
     )
 }

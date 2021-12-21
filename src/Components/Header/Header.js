@@ -4,6 +4,7 @@ import header_image from '../../Images/header-image.jpg';
 import HeaderCartButton from './HeaderCartButton';
 
 const Header = () => {
+
     return (
         <div className={classes['primary-container']}>
             <header className={classes.header}>

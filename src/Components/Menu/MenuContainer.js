@@ -8,6 +8,7 @@ const MenuContainer = (props) => {
             <h1>Menu</h1>
             <div className={classes['items-container']}>
                 {props.menu.map((item) => {
+                    console.log(item.image);
                     return <MenuItemCard name={item.name} price={item.price} image={item.image} key={item.id} />
                 })}
             </div>
