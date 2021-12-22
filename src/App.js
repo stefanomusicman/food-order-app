@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Header from './Components/Header/Header';
 import MenuContainer from './Components/Menu/MenuContainer';
+import ContactForm from './Components/Footer/ContactForm';
 import Biscotti from './Images/biscotti.jpg';
 import Cannoli from './Images/cannoli.jpg';
 import Cappuccino from './Images/cappuccino.jpg';
@@ -52,6 +53,7 @@ function App() {
     <Fragment>
       <Header />
       <MenuContainer menu={menuItems}/>
+      <ContactForm />
     </Fragment>
   );
 }
