@@ -1,11 +1,15 @@
 import React from "react";
+import { BsTelephone } from 'react-icons/bs';
+import { ImLocation } from 'react-icons/im'
 import classes from './ContactForm.module.css';
 
 const ContactForm = () => {
     return (
         <>
-            <h3>Contact Us</h3>
-            <h5>Feel free to contact us or fill out the form and we'll contact you!</h5>
+            <div className={classes['footer-top']}>
+                <h3>Contact Us</h3>
+                <h5>Feel free to contact us or fill out the form and we'll contact you!</h5>
+            </div>
             <div className={classes['main-container']}>
                 <div className={classes['form-container']}>
                     <form id='clientForm'>
@@ -19,6 +23,14 @@ const ContactForm = () => {
                         </div>
                     </form>
                     <textarea form="clientForm">What can we do for you?</textarea>
+                </div>
+                <div className={classes.location}>
+                    <div className={classes['phone-number']}>
+                        <BsTelephone /><span>514-886-9089</span>
+                    </div>
+                    <div className={classes['address']}>
+                        <ImLocation/><span>2534 Rue Sainte-Catherine Ouest</span>
+                    </div>
                 </div>
             </div>
         </>

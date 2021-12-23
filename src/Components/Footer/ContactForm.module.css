@@ -1,14 +1,21 @@
-h3 {
+.footer-top h3 {
     text-align: center;
+    font-size: 40px;
+    font-family: 'Abel';
+    color: whitesmoke;
 }
 
-h5 {
+.footer-top h5 {
     text-align: center;
+    font-size: 30px;
+    font-family: 'Abel';
+    color: whitesmoke;
 }
 
 .main-container {
     display: flex;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 .form-container {
@@ -20,5 +27,82 @@ h5 {
     margin-top: 2rem;
 }
 
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.phone {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;     
+    margin-bottom: 20px;
+}
 
+.name input {
+    width: 25rem;
+    height: 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+    box-shadow: 0px 0px 4px 1px black;
+    font-family: 'Abel';
+}
+
+.name label {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Abel';
+    color: whitesmoke;
+}
+
+.phone input {
+    width: 25rem;
+    height: 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+    box-shadow: 0px 0px 4px 1px black;
+    font-family: 'Abel';
+}
+
+.phone label {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Abel';
+    color: whitesmoke;
+}
+
+textarea {
+    width: 25rem;
+    height: 10rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #E0E0E0;
+    box-shadow: 0px 0px 4px 1px black;
+    font-family: 'Abel';
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.phone-number {
+    margin-bottom: 30px;
+    color: whitesmoke;
+}
+
+.address {
+    color: whitesmoke;
+}
