@@ -106,3 +106,25 @@ textarea {
 .address {
     color: whitesmoke;
 }
+
+.email-list__submit {
+    font-family: 'Abel';
+    font-size: 20px;
+    width: 5em;
+    padding: 10px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px black;
+    margin-top: 0.8em;
+    cursor: pointer;
+    transition: transform 300ms;
+    margin-left: 38%;
+}
+
+.email-list__submit:hover,
+.email-list__submit:active {
+    background-color: black;
+    color: whitesmoke;
+    transform: scale(1.1);
+}
