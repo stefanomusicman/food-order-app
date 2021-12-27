@@ -1,7 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Header from './Components/Header/Header';
 import MenuContainer from './Components/Menu/MenuContainer';
 import ContactForm from './Components/Footer/ContactForm';
+import Cart from './Components/Cart/Cart';
 import Biscotti from './Images/biscotti.jpg';
 import Cannoli from './Images/cannoli.jpg';
 import Cappuccino from './Images/cappuccino.jpg';
@@ -50,11 +53,18 @@ const menuItems = [
 
 function App() {
   return (
-    <Fragment>
-      <Header />
-      <MenuContainer menu={menuItems}/>
-      <ContactForm />
-    </Fragment>
+    <Router>
+      <Switch>
+        <Route path='/' exact>
+            <Header />
+            <MenuContainer menu={menuItems}/>
+            <ContactForm />
+        </Route>
+        <Route path='/cart'>
+            <Cart />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
