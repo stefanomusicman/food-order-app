@@ -7,8 +7,8 @@ const ContactForm = () => {
     return (
         <>
             <div className={classes['footer-top']}>
-                <h3>Contact Us</h3>
-                <h5>Feel free to contact us or fill out the form and we'll contact you!</h5>
+                <h3>Join Our Mailing List</h3>
+                <h5>Allow us to keep you up to date with any promotions by joining our mailing list!</h5>
             </div>
             <div className={classes['main-container']}>
                 <div className={classes['form-container']}>
@@ -18,11 +18,11 @@ const ContactForm = () => {
                             <input id='name' type='text' />
                         </div>
                         <div className={classes.phone}>
-                            <label htmlFor="phone">Phone Number</label>
-                            <input id='phone' type='number' />
+                            <label htmlFor="email">Email</label>
+                            <input id='email' type='text' />
                         </div>
                     </form>
-                    <textarea form="clientForm">What can we do for you?</textarea>
+                    {/* <textarea form="clientForm">What can we do for you?</textarea> */}
                 </div>
                 <div className={classes.location}>
                     <div className={classes['phone-number']}>
