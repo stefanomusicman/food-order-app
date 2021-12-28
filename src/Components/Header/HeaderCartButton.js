@@ -5,10 +5,11 @@ import classes from './HeaderCartButton.module.css';
 
 const HeaderCartButton = () => {
 
+
     // const [amountInCart, setAmountInCart] = useState(0);
 
     return (
-        <Link to='/cart'>
+        <Link to='/cart' >
             <button className={classes.button}>
                 <BsCart className={classes.icon} />
                 <span>Your Cart</span>

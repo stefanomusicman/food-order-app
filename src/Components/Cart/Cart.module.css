@@ -1,0 +1,14 @@
+.cart-container {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart {
+    width: 75%;
+    height: 75%;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 5px 2px rgb(105,105,105);
+    border-radius: 10px;
+}

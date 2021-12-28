@@ -8,6 +8,7 @@ const AddToCartButton = (props) => {
     const price = props.price;
 
     const [quantity, setQuantity] = useState(1);
+    const [message, setMessage] = useState('Add To Cart');
 
     const quantityHandler = (event) => {
         setQuantity(event.target.value);
@@ -22,6 +23,9 @@ const AddToCartButton = (props) => {
         totalAmount: price * quantity
       }
 
+      setQuantity(1);
+      setMessage('Done!')
+
       console.log(itemsToAdd);
     }
 
@@ -32,7 +36,7 @@ const AddToCartButton = (props) => {
             <input onChange={quantityHandler} type='number' value={quantity} min={1}></input>
             <button type="submit" className={classes.button}>
               <BsCart className={classes.icon} />
-              <span>Add To Cart</span>
+              <span>{message}</span>
             </button>
           </form>
         </>  

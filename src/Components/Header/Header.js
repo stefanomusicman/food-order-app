@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Header.module.css';
-import header_image from '../../Images/header-image.jpg';
+import header_image from '../../Images/las-vegas-cafe.jpg';
 import HeaderCartButton from './HeaderCartButton';
 
 const Header = () => {
