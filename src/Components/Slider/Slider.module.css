@@ -1,0 +1,38 @@
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+.slider-container p {
+    text-align: center;
+}
+
+.dot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot-container span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+span::before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-color: #d4d4d4;
+    border-radius: 50%;
+}
+
+span:hover::before {
+    background-color: #45454d;
+}
+
