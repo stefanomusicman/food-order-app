@@ -18,6 +18,11 @@
   transform: scale(1.1);
 }
 
+.button:visited {
+    text-decoration: none;
+    color: #2c0d00;
+}
+
 .icon {
     width: 1.35rem;
     height: 1.35rem;
