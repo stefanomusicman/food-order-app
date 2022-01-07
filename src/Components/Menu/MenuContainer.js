@@ -51,7 +51,7 @@ const menuItems = [
 const MenuContainer = () => {
     return(
         <div className={classes['menu-container']}>
-            <h1>Menu</h1>
+            <h1 className="menu"><span>Menu</span></h1>
             <div className={classes['items-container']}>
                 {menuItems.map((item) => {
                     return <MenuItemCard name={item.name} price={item.price} image={item.image} key={item.id} />
