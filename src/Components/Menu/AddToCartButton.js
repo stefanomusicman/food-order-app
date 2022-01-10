@@ -5,9 +5,9 @@ import { addProductToCart } from "../Cart/Cart";
 
 const AddToCartButton = (props) => {
 
-    const name = props.name;
+    // const name = props.name;
     const id = props.id;
-    const price = props.price;
+    // const price = props.price;
 
     const [quantity, setQuantity] = useState(1);
     const [message, setMessage] = useState('Add To Cart');

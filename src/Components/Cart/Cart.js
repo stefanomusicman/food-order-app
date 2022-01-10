@@ -4,12 +4,13 @@ import { getPriceForQuantity } from "../Menu/MenuContainer";
 import { Link } from "react-router-dom";
 import classes from './Cart.module.css';
 import { BsCart } from 'react-icons/bs';
+import { BsTrash } from "react-icons/bs";
 
 
-let productsInCart = [];
+export let productsInCart = [];
 
 export const addProductToCart = (id, quantity) => {
-    productsInCart.push({...getProductById(id), quantity, price: getPriceForQuantity(id,quantity)});
+    productsInCart.push({...getProductById(id), quantity, price: getPriceForQuantity(id,quantity).toFixed(2)});
 }
 
 
@@ -21,14 +22,14 @@ const Cart = () => {
     const handleIncreaseQuantity = (id) => {
         const i = productsInCart.findIndex(item => item.id === id);
         productsInCart[i].quantity = productsInCart[i].quantity + 1;
-        productsInCart[i].price = getPriceForQuantity(id,productsInCart[i].quantity)
+        productsInCart[i].price = getPriceForQuantity(id,productsInCart[i].quantity).toFixed(2);
         setUpdate(update+1);
     }
     
     const handleDecreaseQuantity = (id) => {
         const i = productsInCart.findIndex(item => item.id === id);
         productsInCart[i].quantity = productsInCart[i].quantity - 1;
-        productsInCart[i].price = getPriceForQuantity(id,productsInCart[i].quantity)
+        productsInCart[i].price = getPriceForQuantity(id,productsInCart[i].quantity).toFixed(2);
         setUpdate(update+1);
     }
 
@@ -36,13 +37,16 @@ const Cart = () => {
         <div className={classes['cart-container']}>
             <div className={classes.cart}>
                 <h1>Your Cart</h1>
-                <div>
-                   { productsInCart.map((el, i) => <div key={i}>
-                        <h1>{el.name}</h1>
-                        <h3>{el.price}</h3>
-                        <h3>{el.quantity}</h3>
-                        <button onClick={() => handleIncreaseQuantity(el.id)}>+</button>
-                        <button onClick={() => handleDecreaseQuantity(el.id)}>-</button>
+                <div className={classes['cart-items__container']}>
+                   { productsInCart.map((el, i) => <div className={classes['cart-items']} key={i}>
+                        <h3 className={classes.quantity}>{el.quantity}</h3>
+                        <h3 className={classes.name}>{el.name}</h3>
+                        <h3 className={classes.price}>{`${el.price}$`}</h3>
+                        <div className={classes['cart-buttons__container']}>
+                            <button onClick={() => handleIncreaseQuantity(el.id)}>+</button>
+                            <button onClick={() => handleDecreaseQuantity(el.id)}>-</button>
+                            <button><BsTrash /></button>
+                        </div>
                    </div>)}
                 </div>
                 <div className={classes['cart-footer__container']}>
@@ -51,7 +55,7 @@ const Cart = () => {
                             <BsCart className={classes['checkout-icon']} />
                             <span>Proceed To Checkout</span>
                         </button>
-                        <Link to='/'>
+                        <Link to='/' className={classes['return-to__home']}>
                             <button className={classes['back-button']}>Back</button>
                         </Link>
                     </div>
