@@ -1,10 +1,12 @@
 import React, {  useState } from "react";
 import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
+import { addProductToCart } from "../Cart/Cart";
 
 const AddToCartButton = (props) => {
 
     const name = props.name;
+    const id = props.id;
     const price = props.price;
 
     const [quantity, setQuantity] = useState(1);
@@ -16,17 +18,15 @@ const AddToCartButton = (props) => {
 
     const submitHandler = (event) => {
       event.preventDefault()
-      const itemsToAdd = {
-        name: name,
-        price: price,
+      const itemToAdd = {
+        id: id,
         quantity: quantity,
-        totalAmount: price * quantity
       }
+      addProductToCart(itemToAdd.id, itemToAdd.quantity);
 
       setQuantity(1);
       setMessage('Done!')
 
-      console.log(itemsToAdd);
     }
 
     return (

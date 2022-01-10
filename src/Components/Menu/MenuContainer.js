@@ -9,7 +9,7 @@ import Espresso from '../../Images/espresso.jpg';
 import Focaccia from '../../Images/focaccia.jpg';
 import Panino from '../../Images/panino.jpg';
 
-const menuItems = [
+export const menuItems = [
     {
       name: 'Espresso',
       price: 2.50,
@@ -48,13 +48,23 @@ const menuItems = [
     }
   ];
 
+export const getPriceForQuantity = (id, quantity) => {
+  return menuItems.find(item => item.id === id).price * quantity;
+}
+
+export const getProductById = (id) => {
+  return menuItems.find(item => item.id === id);
+}
+
+
+
 const MenuContainer = () => {
     return(
         <div className={classes['menu-container']}>
             <h1 className="menu"><span>Menu</span></h1>
             <div className={classes['items-container']}>
                 {menuItems.map((item) => {
-                    return <MenuItemCard name={item.name} price={item.price} image={item.image} key={item.id} />
+                    return <MenuItemCard name={item.name} price={item.price} image={item.image} key={item.id} id={item.id}/>
                 })}
             </div>
         </div>

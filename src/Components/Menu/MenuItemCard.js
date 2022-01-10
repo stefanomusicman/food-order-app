@@ -13,7 +13,7 @@ const MenuItemCard = (props) => {
             </div>
             <h3>{props.name}</h3>
             <h4>{price}</h4>
-            <AddToCartButton name={props.name} price={props.price} />
+            <AddToCartButton id={props.id} name={props.name} price={props.price} />
         </div>
     )
 }
