@@ -7,6 +7,14 @@ import { BsCart } from 'react-icons/bs';
 import { BsTrash } from "react-icons/bs";
 
 
+// const getSessionOrDefault = (key, defaultValue) => {
+//     const stored = sessionStorage.getItem(key);
+//     if(stored === null) {
+//       return defaultValue;
+
+//     return JSON.parse(stored);    }
+// }
+
 export let productsInCart = [];
 
 export const addProductToCart = (id, quantity) => {
@@ -15,6 +23,14 @@ export const addProductToCart = (id, quantity) => {
 
 
 const Cart = () => {
+
+    // const [cart, setCart] = useState(getSessionOrDefault('cartItems', [productsInCart]));
+    // useEffect(() => {
+    //   sessionStorage.setItem('cartItems', JSON.stringify(cart))
+    // }, [cart]);
+
+    const [cart, setCart] = useState(productsInCart);
+    // const [total, setTotal] = useState(0);
 
     // Just for making rerender happen
     const [update, setUpdate] = useState(0);
@@ -33,25 +49,32 @@ const Cart = () => {
         setUpdate(update+1);
     }
 
+    const handleDelete = (id) => {
+        setCart((prevCart) => prevCart.filter(item => item.id !== id));
+    }
+
+    const total = cart.map(item => item.price).reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0);
+
     return(
         <div className={classes['cart-container']}>
             <div className={classes.cart}>
                 <h1>Your Cart</h1>
                 <div className={classes['cart-items__container']}>
-                   { productsInCart.map((el, i) => <div className={classes['cart-items']} key={i}>
+                   { cart.map((el, i) => <div className={classes['cart-items']} key={i}>
                         <h3 className={classes.quantity}>{el.quantity}</h3>
                         <h3 className={classes.name}>{el.name}</h3>
                         <h3 className={classes.price}>{`${el.price}$`}</h3>
                         <div className={classes['cart-buttons__container']}>
                             <button onClick={() => handleIncreaseQuantity(el.id)}>+</button>
                             <button onClick={() => handleDecreaseQuantity(el.id)}>-</button>
-                            <button><BsTrash /></button>
+                            <button onClick={() => handleDelete(el.id)}><BsTrash /></button>
                         </div>
                    </div>)}
+                   {cart.length === 0 && <p>Your Cart is Empty</p>}
                 </div>
                 <div className={classes['cart-footer__container']}>
                     <div className={classes['buttons-container']}>
-                        <button className={classes['checkout-button']}>
+                        <button onClick={() => console.log(cart)} className={classes['checkout-button']}>
                             <BsCart className={classes['checkout-icon']} />
                             <span>Proceed To Checkout</span>
                         </button>
@@ -60,7 +83,7 @@ const Cart = () => {
                         </Link>
                     </div>
                     <div className={classes['total-amount']}>
-                        <p>Total Amount: 0</p>
+                        <div>Total Amount: {total}</div>
                     </div>
                 </div>
             </div>
