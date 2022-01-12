@@ -163,3 +163,37 @@
     color: #2c0d00;
 }
 
+@media (max-width: 900px) {
+
+    .cart-footer__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-items {
+        font-size: 80%;
+    }
+
+    .cart-buttons__container  button {
+        padding: 0.7em 1.2em;
+        font-size: 0.7em;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    .checkout-button {
+        padding: 0.5rem 0.5rem;
+        font-size: 50%;
+        border-radius: 10px;
+    }
+
+    .back-button {
+        padding: 1rem 1rem;
+        border-radius: 10px;
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

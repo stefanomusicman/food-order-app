@@ -31,7 +31,7 @@ const ContactForm = () => {
     }
 
     return (
-        <>
+        <div className={classes['section-container']}>
             <div className={classes['footer-top']}>
                 <h3>Join Our Mailing List</h3>
                 <h5>Allow us to keep you up to date with any promotions by joining our mailing list!</h5>
@@ -49,7 +49,6 @@ const ContactForm = () => {
                         </div>
                         <button className={classes['email-list__submit']} type="submit">Submit</button>
                     </form>
-                    {/* <textarea form="clientForm">What can we do for you?</textarea> */}
                 </div>
                 <div className={classes.location}>
                     <div className={classes['phone-number']}>
@@ -60,7 +59,7 @@ const ContactForm = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

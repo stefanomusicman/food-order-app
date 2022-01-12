@@ -79,17 +79,6 @@
     color: whitesmoke;
 }
 
-textarea {
-    width: 25rem;
-    height: 10rem;
-    border: none;
-    border-radius: 10px;
-    margin-top: 10px;
-    background-color: #E0E0E0;
-    box-shadow: 0px 0px 4px 1px black;
-    font-family: 'Abel';
-}
-
 .location {
     display: flex;
     flex-direction: column;
@@ -127,4 +116,63 @@ textarea {
     background-color: black;
     color: whitesmoke;
     transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+
+    .section-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-top {
+        text-align: center;
+        width: 80%;
+    }
+
+    .footer-top h3 {
+        font-size: 30px;
+    }
+
+    .footer-top h5 {
+        font-size: 20px;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .name input {
+        width: 20rem;
+    }
+
+    .phone input {
+        width: 20rem;
+    }
+
+    .email-list__submit {
+        margin-left: 35%;
+    }
+
+    .location {
+        display: flex;
+        margin-top: 2em;
+        width: 100%;
+    }
 }

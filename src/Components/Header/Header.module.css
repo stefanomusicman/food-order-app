@@ -61,3 +61,30 @@
     font-family: 'Abel';
     font-size: 125%;
 }
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 750px) {
+    .main-image div {
+        height: 75%;
+    }
+
+    .main-image h2 {
+        font-size: 120%;
+    }
+
+    .main-image p {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-image div {
+        width: 75%;
+        left: 12%;
+    }
+}
