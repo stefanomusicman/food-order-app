@@ -17,8 +17,8 @@ import { BsTrash } from "react-icons/bs";
 
 export let productsInCart = [];
 
-export const addProductToCart = (id, quantity) => {
-    productsInCart.push({...getProductById(id), quantity, price: getPriceForQuantity(id,quantity).toFixed(2)});
+export const addProductToCart = (id, quantity, image) => {
+    productsInCart.push({...getProductById(id), image, quantity, price: getPriceForQuantity(id,quantity).toFixed(2)});
 }
 
 
@@ -53,14 +53,17 @@ const Cart = () => {
         setCart((prevCart) => prevCart.filter(item => item.id !== id));
     }
 
-    const total = cart.map(item => item.price).reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0);
+    const total = cart.map(item => Number(item.price)).reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0);
 
     return(
         <div className={classes['cart-container']}>
             <div className={classes.cart}>
-                <h1>Your Cart</h1>
+                <h1 style={{fontFamily: 'Abel'}}>Your Cart</h1>
                 <div className={classes['cart-items__container']}>
                    { cart.map((el, i) => <div className={classes['cart-items']} key={i}>
+                        <div className={classes['imageBox']}>
+                            <img src={el.image} alt="menu-item" />
+                        </div>
                         <h3 className={classes.quantity}>{el.quantity}</h3>
                         <h3 className={classes.name}>{el.name}</h3>
                         <h3 className={classes.price}>{`${el.price}$`}</h3>
@@ -74,7 +77,7 @@ const Cart = () => {
                 </div>
                 <div className={classes['cart-footer__container']}>
                     <div className={classes['buttons-container']}>
-                        <button onClick={() => console.log(cart)} className={classes['checkout-button']}>
+                        <button onClick={() => console.log(productsInCart)} className={classes['checkout-button']}>
                             <BsCart className={classes['checkout-icon']} />
                             <span>Proceed To Checkout</span>
                         </button>
@@ -83,7 +86,7 @@ const Cart = () => {
                         </Link>
                     </div>
                     <div className={classes['total-amount']}>
-                        <div>Total Amount: {total}</div>
+                        <div>Total Amount: {total.toFixed(2)}$</div>
                     </div>
                 </div>
             </div>

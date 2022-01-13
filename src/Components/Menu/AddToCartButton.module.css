@@ -10,6 +10,7 @@
     border-radius: 25px;
     font-weight: bold;
     transition: transform 300ms;
+    font-family: 'PT Sans';
 }
 
 .button:hover,
