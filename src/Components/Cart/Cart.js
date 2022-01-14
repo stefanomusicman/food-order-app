@@ -64,12 +64,14 @@ const Cart = () => {
                         <div className={classes['imageBox']}>
                             <img src={el.image} alt="menu-item" />
                         </div>
-                        <h3 className={classes.quantity}>{el.quantity}</h3>
-                        <h3 className={classes.name}>{el.name}</h3>
-                        <h3 className={classes.price}>{`${el.price}$`}</h3>
+                        <div className={classes['item-info']}>
+                            <h3 className={classes.quantity}>{el.quantity}</h3>
+                            <h3 className={classes.name}>{el.name}</h3>
+                            <h3 className={classes.price}>{`${el.price}$`}</h3>
+                        </div>
                         <div className={classes['cart-buttons__container']}>
                             <button onClick={() => handleIncreaseQuantity(el.id)}>+</button>
-                            <button onClick={() => handleDecreaseQuantity(el.id)}>-</button>
+                            <button disabled={el.quantity === 1} onClick={() => handleDecreaseQuantity(el.id)}>-</button>
                             <button onClick={() => handleDelete(el.id)}><BsTrash /></button>
                         </div>
                    </div>)}

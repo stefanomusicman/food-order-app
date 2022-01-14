@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
 import { addProductToCart } from "../Cart/Cart";
+// import { productsInCart } from "../Cart/Cart";
 
 const AddToCartButton = (props) => {
 
@@ -19,6 +20,7 @@ const AddToCartButton = (props) => {
 
     const submitHandler = (event) => {
       event.preventDefault()
+
       const itemToAdd = {
         id: id,
         quantity: quantity,
@@ -28,7 +30,6 @@ const AddToCartButton = (props) => {
 
       setQuantity(1);
       setMessage('Done!')
-
     }
 
     return (

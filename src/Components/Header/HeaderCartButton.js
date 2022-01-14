@@ -7,7 +7,7 @@ import { productsInCart } from "../Cart/Cart";
 const HeaderCartButton = () => {
 
     
-    // const [amountInCart, setAmountInCart] = useState(0);
+    // const [amountInCart, setAmountInCart] = useState();
 
     return (
         <Link to='/cart' >
