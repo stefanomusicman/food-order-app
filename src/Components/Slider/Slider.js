@@ -8,7 +8,7 @@ const reviews = {
         id: 1
     },
     1: {
-        client: 'Giusseppe Saviano',
+        client: 'Giuseppe Saviano',
         review: '"I am an Italian immigrant and can honestly say that I am impressed with the level of authenticity in everything that Cafe Vici offers."',
         id: 2
     },
