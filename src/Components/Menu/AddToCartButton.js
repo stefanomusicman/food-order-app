@@ -2,9 +2,11 @@ import React, {  useState } from "react";
 import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
 import { addProductToCart } from "../Cart/Cart";
-// import { productsInCart } from "../Cart/Cart";
+import { productsInCart } from "../Cart/Cart";
 
 const AddToCartButton = (props) => {
+
+  // useContext 
 
     // const name = props.name;
     const id = props.id;
@@ -26,6 +28,8 @@ const AddToCartButton = (props) => {
         quantity: quantity,
         image: image
       }
+
+      console.log('submitHandler')
       addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image);
 
       setQuantity(1);

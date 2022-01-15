@@ -10,8 +10,12 @@ import Cart from './Components/Cart/Cart';
 
 
 function App() {
+  // create a context for the cart
+  const [cart, setCart] = React.useState([]);
+
 
   return (
+    // Provider is used to pass data from one component to another, value = cart
     <Router>
       <Switch>
         <Route path='/' exact>

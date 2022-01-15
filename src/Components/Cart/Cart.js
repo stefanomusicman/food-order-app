@@ -18,39 +18,44 @@ import { BsTrash } from "react-icons/bs";
 export let productsInCart = [];
 
 export const addProductToCart = (id, quantity, image) => {
-    productsInCart.push({...getProductById(id), image, quantity, price: getPriceForQuantity(id,quantity).toFixed(2)});
+    // 0 , [1,2,0,1]; -1
+    const i = productsInCart.findIndex(item => item.id === id); // false = -1
+    if(i === -1) {
+        productsInCart.push({
+            ...getProductById(id),
+            quantity,
+            image,
+            price: getPriceForQuantity(id,quantity).toFixed(2)
+        });
+    }
 }
-
-
 const Cart = () => {
 
     // const [cart, setCart] = useState(getSessionOrDefault('cartItems', [productsInCart]));
     // useEffect(() => {
     //   sessionStorage.setItem('cartItems', JSON.stringify(cart))
     // }, [cart]);
-
     const [cart, setCart] = useState(productsInCart);
     // const [total, setTotal] = useState(0);
 
-    // Just for making rerender happen
-    const [update, setUpdate] = useState(0);
 
     const handleIncreaseQuantity = (id) => {
         const i = productsInCart.findIndex(item => item.id === id);
         productsInCart[i].quantity = productsInCart[i].quantity + 1;
         productsInCart[i].price = getPriceForQuantity(id,productsInCart[i].quantity).toFixed(2);
-        setUpdate(update+1);
+        setCart([...productsInCart]);
     }
     
     const handleDecreaseQuantity = (id) => {
         const i = productsInCart.findIndex(item => item.id === id);
         productsInCart[i].quantity = productsInCart[i].quantity - 1;
         productsInCart[i].price = getPriceForQuantity(id,productsInCart[i].quantity).toFixed(2);
-        setUpdate(update+1);
+        setCart([...productsInCart]);
     }
 
     const handleDelete = (id) => {
-        setCart((prevCart) => prevCart.filter(item => item.id !== id));
+        productsInCart = productsInCart.filter(item => item.id !== id);
+        setCart(productsInCart);
     }
 
     const total = cart.map(item => Number(item.price)).reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0);
