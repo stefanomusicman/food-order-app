@@ -6,7 +6,6 @@ import { productsInCart } from "../Cart/Cart";
 
 const HeaderCartButton = () => {
 
-    
     // const [amountInCart, setAmountInCart] = useState();
 
     return (

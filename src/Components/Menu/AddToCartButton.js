@@ -2,7 +2,6 @@ import React, {  useState } from "react";
 import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
 import { addProductToCart } from "../Cart/Cart";
-import { productsInCart } from "../Cart/Cart";
 
 const AddToCartButton = (props) => {
 

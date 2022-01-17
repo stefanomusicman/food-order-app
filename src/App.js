@@ -8,10 +8,9 @@ import ContactForm from './Components/Footer/ContactForm';
 import Cart from './Components/Cart/Cart';
 
 
-
 function App() {
   // create a context for the cart
-  const [cart, setCart] = React.useState([]);
+  // const [cart, setCart] = useState([]);
 
 
   return (
