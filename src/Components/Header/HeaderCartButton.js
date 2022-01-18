@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsCart } from 'react-icons/bs';
 import classes from './HeaderCartButton.module.css'; 
 import { productsInCart } from "../Cart/Cart";
+import { CartContext } from "../../Context/CartContext";
 
 const HeaderCartButton = () => {
 
-    // const [amountInCart, setAmountInCart] = useState();
+    const [items, setItems] = useContext(CartContext);
 
     return (
         <Link to='/cart' >

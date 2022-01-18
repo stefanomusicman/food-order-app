@@ -31,13 +31,14 @@ export const addProductToCart = (id, quantity, image) => {
 }
 const Cart = () => {
 
+
     // const [cart, setCart] = useState(getSessionOrDefault('cartItems', [productsInCart]));
     // useEffect(() => {
     //   sessionStorage.setItem('cartItems', JSON.stringify(cart))
     // }, [cart]);
-    const [cart, setCart] = useState(productsInCart);
     // const [total, setTotal] = useState(0);
-
+    
+    const [cart, setCart] = useState(productsInCart);
 
     const handleIncreaseQuantity = (id) => {
         const i = productsInCart.findIndex(item => item.id === id);
