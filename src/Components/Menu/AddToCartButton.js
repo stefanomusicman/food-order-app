@@ -1,37 +1,75 @@
-import React, {  useState } from "react";
+import React, {  useState, useContext } from "react";
+import { menuItems } from "./MenuContainer";
 import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
-import { addProductToCart } from "../Cart/Cart";
+// import { addProductToCart } from "../Cart/Cart";
+import { CartContext } from "../../Context/CartContext";
 
 const AddToCartButton = (props) => {
 
-  // useContext 
+//   const addProductToCart = (id, quantity, image) => {
+//     // 0 , [1,2,0,1]; -1
+//     const i = items.findIndex(item => item.id === id); // false = -1
+//     if(i === -1) {
+//         items.push({
+//             ...getProductById(id),
+//             quantity,
+//             image,
+//             price: getPriceForQuantity(id,quantity).toFixed(2)
+//         });
+//     }
+// }
 
-    // const name = props.name;
+  // useContext 
+    const [items, setItems] = useContext(CartContext);
     const id = props.id;
     const image = props.image
-    // const price = props.price;
+    const name = props.name;
+    const price = props.price
 
-    const [quantity, setQuantity] = useState(1);
+    // const [quantity, setQuantity] = useState(1);
     const [message, setMessage] = useState('Add To Cart');
 
     // const quantityHandler = (event) => {
     //     setQuantity(event.target.value);
     // }
 
+    const getPriceForQuantity = (id, quantity) => {
+      return menuItems.find(item => item.id === id).price * quantity;
+    }
+
+    const getProductById = (id) => {
+      return menuItems.find(item => item.id === id);
+    }
+
+    const addProductToCart = (id, quantity, image) => {
+      const i = items.findIndex(item => item.id === id); // false = -1
+        if(i === -1) {
+          items.push({
+            ...getProductById(id),
+            quantity,
+            image,
+            price: getPriceForQuantity(id,quantity).toFixed(2)
+      });
+   }
+}
     const submitHandler = (event) => {
       event.preventDefault()
 
+
       const itemToAdd = {
         id: id,
-        quantity: quantity,
-        image: image
+        quantity: 1,
+        image: image,
+        name: name,
+        price: price
       }
 
-      console.log('submitHandler')
-      addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image);
-
-      setQuantity(1);
+      addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image, itemToAdd.name, itemToAdd.price);
+      
+      // setItems((prevItems) => [...prevItems, addedItem]);
+      
+      // setQuantity(1);
       setMessage('Done!')
     }
 
