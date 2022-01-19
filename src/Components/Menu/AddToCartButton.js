@@ -4,6 +4,7 @@ import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
 // import { addProductToCart } from "../Cart/Cart";
 import { CartContext } from "../../Context/CartContext";
+import { addProductToCart } from "../Cart/Cart";
 
 const AddToCartButton = (props) => {
 
@@ -29,7 +30,6 @@ const AddToCartButton = (props) => {
 
     // const [quantity, setQuantity] = useState(1);
     const [message, setMessage] = useState('Add To Cart');
-
     // const quantityHandler = (event) => {
     //     setQuantity(event.target.value);
     // }
@@ -69,6 +69,7 @@ const AddToCartButton = (props) => {
       
       // setItems((prevItems) => [...prevItems, addedItem]);
       
+      // setQuantity(1);
       // setQuantity(1);
       setMessage('Done!')
     }
