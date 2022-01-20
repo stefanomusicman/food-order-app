@@ -16,20 +16,6 @@ const Cart = () => {
         return menuItems.find(item => item.id === id).price * quantity;
       }
     
-    // const addProductToCart = (id, quantity, image) => {
-    //     // 0 , [1,2,0,1]; -1
-    //     const i = productsInCart.findIndex(item => item.id === id); // false = -1
-    //     if(i === -1) {
-    //         productsInCart.push({
-    //             ...getProductById(id),
-    //             quantity,
-    //             image,
-    //             price: getPriceForQuantity(id,quantity).toFixed(2)
-    //         });
-    //     }
-    // }
-    
-    // const [cart, setCart] = useState(productsInCart);
     const [items, setItems] = useContext(CartContext);
 
     const handleIncreaseQuantity = (id) => {

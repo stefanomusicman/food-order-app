@@ -4,25 +4,11 @@ import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
 // import { addProductToCart } from "../Cart/Cart";
 import { CartContext } from "../../Context/CartContext";
-import { addProductToCart } from "../Cart/Cart";
 
 const AddToCartButton = (props) => {
 
-//   const addProductToCart = (id, quantity, image) => {
-//     // 0 , [1,2,0,1]; -1
-//     const i = items.findIndex(item => item.id === id); // false = -1
-//     if(i === -1) {
-//         items.push({
-//             ...getProductById(id),
-//             quantity,
-//             image,
-//             price: getPriceForQuantity(id,quantity).toFixed(2)
-//         });
-//     }
-// }
-
-  // useContext 
     const [items, setItems] = useContext(CartContext);
+
     const id = props.id;
     const image = props.image
     const name = props.name;
@@ -49,14 +35,13 @@ const AddToCartButton = (props) => {
             ...getProductById(id),
             quantity,
             image,
-            price: getPriceForQuantity(id,quantity).toFixed(2)
+            price: getPriceForQuantity(id,quantity).toFixed(2),
       });
    }
 }
     const submitHandler = (event) => {
       event.preventDefault()
-
-
+      
       const itemToAdd = {
         id: id,
         quantity: 1,
@@ -64,12 +49,13 @@ const AddToCartButton = (props) => {
         name: name,
         price: price
       }
+      
+      // setItems([...items]); ******problem is here******
+      // if i do this setItems(prevItems => [...prevItems, itemToAdd]).......the counter will work
+      addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image, itemToAdd.name, itemToAdd.price)
+      // addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image, itemToAdd.name, itemToAdd.price);
 
-      addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image, itemToAdd.name, itemToAdd.price);
       
-      // setItems((prevItems) => [...prevItems, addedItem]);
-      
-      // setQuantity(1);
       // setQuantity(1);
       setMessage('Done!')
     }
