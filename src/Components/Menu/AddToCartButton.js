@@ -30,14 +30,18 @@ const AddToCartButton = (props) => {
 
     const addProductToCart = (id, quantity, image) => {
       const i = items.findIndex(item => item.id === id); // false = -1
+      let addeditem = {
+        ...getProductById(id),
+        quantity,
+        image,
+        price: getPriceForQuantity(id,quantity).toFixed(2),
+      }
         if(i === -1) {
-          items.push({
-            ...getProductById(id),
-            quantity,
-            image,
-            price: getPriceForQuantity(id,quantity).toFixed(2),
-      });
-   }
+          items.push(addeditem);
+          setItems(prevItems => [...prevItems, addeditem])
+        } else {
+          setItems([...items]);
+    }
 }
     const submitHandler = (event) => {
       event.preventDefault()
