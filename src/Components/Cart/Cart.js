@@ -8,7 +8,6 @@ import { BsTrash } from "react-icons/bs";
 import { CartContext } from "../../Context/CartContext";
 import { menuItems } from "../Menu/MenuContainer";
 
-// export let productsInCart = [];
 
 const Cart = () => {
 
@@ -62,10 +61,12 @@ const Cart = () => {
                 </div>
                 <div className={classes['cart-footer__container']}>
                     <div className={classes['buttons-container']}>
-                        <button className={classes['checkout-button']}>
-                            <BsCart className={classes['checkout-icon']} />
-                            <span>Proceed To Checkout</span>
-                        </button>
+                        <Link to='/checkout' className={classes['return-to__home']}>
+                            <button className={classes['checkout-button']}>
+                                <BsCart className={classes['checkout-icon']} />
+                                <span>Proceed To Checkout</span>
+                            </button>
+                        </Link>
                         <Link to='/' className={classes['return-to__home']}>
                             <button className={classes['back-button']}>Back</button>
                         </Link>

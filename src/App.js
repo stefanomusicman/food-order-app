@@ -6,6 +6,7 @@ import MenuContainer from './Components/Menu/MenuContainer';
 import Slider from './Components/Slider/Slider';
 import ContactForm from './Components/Footer/ContactForm';
 import Cart from './Components/Cart/Cart';
+import CheckoutPage from './Components/Checkout/CheckoutPage';
 import { CartProvider } from './Context/CartContext';
 
 function App() {
@@ -25,7 +26,10 @@ function App() {
             <ContactForm />
           </Route>
           <Route path='/cart'>
-              <Cart />
+            <Cart />
+          </Route>
+          <Route path='/checkout'>
+            <CheckoutPage />
           </Route>
         </Switch>
       </Router>
