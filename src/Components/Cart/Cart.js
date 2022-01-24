@@ -57,12 +57,12 @@ const Cart = () => {
                             <button onClick={() => handleDelete(el.id)}><BsTrash /></button>
                         </div>
                    </div>)}
-                   {items.length === 0 && <p>Your Cart is Empty</p>}
+                   {items.length === 0 && <p style={{fontSize: '25px'}}>Your Cart is Empty</p>}
                 </div>
                 <div className={classes['cart-footer__container']}>
                     <div className={classes['buttons-container']}>
                         <Link to='/checkout' className={classes['return-to__home']}>
-                            <button className={classes['checkout-button']}>
+                            <button disabled={items.length === 0} className={classes['checkout-button']}>
                                 <BsCart className={classes['checkout-icon']} />
                                 <span>Proceed To Checkout</span>
                             </button>
