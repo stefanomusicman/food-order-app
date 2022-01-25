@@ -1,14 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import classes from './CheckoutPage.module.css';
 import { FaCcVisa } from 'react-icons/fa';
 import { FaCcMastercard } from "react-icons/fa";
 import { SiAmericanexpress } from 'react-icons/si';
-import { CartContext } from "../../Context/CartContext";
+import CheckoutSummary from "./CheckoutSummary";
 
 const CheckoutPage = () => {
 
-    const [items] = useContext(CartContext);
     const [cardNumber, setCardNumber] = useState(0);
     const [cvv, setCvv] = useState(0);
     const [name, setName] = useState('');
@@ -61,8 +60,6 @@ const CheckoutPage = () => {
             setIsValid(false);
         }
     }
-
-    const total = items.map(item => Number(item.price)).reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0);
     
     return(
         <div className={classes['checkout-primary']}>
@@ -92,24 +89,7 @@ const CheckoutPage = () => {
                     </Link>
                 </div>
             </form>
-            <div className={classes['order-summary__conatiner']}>
-                <h1 style={{fontFamily: 'Abel'}}>Order Summary</h1>
-                <div className={classes['summary-items__container']}>
-                    {items.map((el, i) => <div className={classes['order-item']} key={i} >
-                        <div className={classes['order-item__img']}>
-                            <img src={el.image} alt="checkout-item"/>
-                        </div>
-                        <div className={classes['order-item__info']}>
-                            <h3>{el.quantity}</h3>
-                            <h3>{el.name}</h3>
-                            <h3>{el.price}</h3>
-                        </div>
-                    </div>)}
-                </div>
-                <div className={classes['order-summary__footer']}>
-                    <div>Total Amount: {total.toFixed(2)}</div>
-                </div>
-            </div>
+            <CheckoutSummary />
         </div>
     )
 }
