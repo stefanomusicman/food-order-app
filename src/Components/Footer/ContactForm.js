@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsTelephone } from 'react-icons/bs';
-import { ImLocation } from 'react-icons/im'
+import { ImLocation } from 'react-icons/im';
+import MapContainer from "./MapContainer";
 import classes from './ContactForm.module.css';
 
 const ContactForm = () => {
@@ -51,12 +52,23 @@ const ContactForm = () => {
                     </form>
                 </div>
                 <div className={classes.location}>
-                    <div className={classes['phone-number']}>
-                        <BsTelephone /><span>514-886-9089</span>
+                    <div className={classes['street-phone__container']}>
+                        <div className={classes['phone-number']}>
+                            <BsTelephone /><span>514-886-9089</span>
+                        </div>
+                        <div className={classes['address']}>
+                            <ImLocation/><span>2534 Rue Sainte-Catherine Ouest</span>
+                        </div>
                     </div>
-                    <div className={classes['address']}>
-                        <ImLocation/><span>2534 Rue Sainte-Catherine Ouest</span>
-                    </div>
+                    <MapContainer />
+                    {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.0282711565346!2d-73.5866504851148!3d45.48937543978537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a6d64e91351%3A0x9f4bf07f2242b891!2s2534%20Rue%20Sainte-Catherine%20O%2C%20Montr%C3%A9al%2C%20QC!5e0!3m2!1sen!2sca!4v1643404555343!5m2!1sen!2sca" 
+                        title="myMap"
+                        width="600" 
+                        height="450" 
+                        style={{border: "0", borderRadius: '5px'}} 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe> */}
                 </div>
             </div>
         </div>
