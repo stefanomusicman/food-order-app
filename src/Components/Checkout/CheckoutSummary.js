@@ -23,7 +23,7 @@ const CheckoutSummary = () => {
                     </div>)}
                 </div>
                 <div className={classes['order-summary__footer']}>
-                    <div>Total Amount: {total.toFixed(2)}</div>
+                    <div>Total Amount: {total.toFixed(2)}$</div>
                 </div>
         </div>
     )
