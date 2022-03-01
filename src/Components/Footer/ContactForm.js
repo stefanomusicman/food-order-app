@@ -61,6 +61,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                     {/* <MapContainer /> */}
+                    <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.016968824047!2d-73.5476237844404!3d45.52986407910171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91ba250b9ad6b%3A0xde16385929f0672!2s2534%20Rue%20Sainte-Catherine%20E%2C%20Montr%C3%A9al%2C%20QC%20H2K%202K2!5e0!3m2!1sen!2sca!4v1646168691334!5m2!1sen!2sca" width="600" height="450" style={{border: '0', borderRadius: '5px'}} allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
