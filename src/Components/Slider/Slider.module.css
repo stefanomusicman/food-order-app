@@ -44,5 +44,9 @@ span:hover::before {
     background-color: #45454d;
 }
 
-
+@media (max-width: 800px) {
+    .slider-container p {
+        font-size: 1.7em;
+    }
+}
 

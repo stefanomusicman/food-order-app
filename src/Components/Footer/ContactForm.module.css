@@ -126,7 +126,15 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 900px) {
+.map {
+    width: 600; 
+    height: 450; 
+    border: 0; 
+    border-radius: 5px;
+}
+
+
+@media (max-width: 1200px) {
 
     .section-container {
         display: flex;
@@ -182,5 +190,18 @@
         display: flex;
         margin-top: 2em;
         width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .map {
+        display: none;
+    }
+
+    .street-phone__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
