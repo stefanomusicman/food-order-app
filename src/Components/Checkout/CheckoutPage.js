@@ -7,59 +7,6 @@ import { SiAmericanexpress } from 'react-icons/si';
 import CheckoutSummary from "./CheckoutSummary";
 
 const CheckoutPage = () => {
-
-    // const [cardNumber, setCardNumber] = useState(0);
-    // const [cvv, setCvv] = useState(0);
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [isValid, setIsValid] = useState(true);
-
-    // const cardNumberHandler = (event) => {
-    //     if(event.target.value.trim().length === 17) {
-    //         setIsValid(true)
-    //     }
-    //     setCardNumber(event.target.value);
-    // }
-
-    // const cvvHandler = (event) => {
-    //     if(event.target.value.trim().length === 3) {
-    //         setIsValid(true)
-    //     }
-    //     setCvv(event.target.value);
-    // }
-
-    // const nameHandler = (event) => {
-    //     if(event.target.value.trim().length > 0) {
-    //         setIsValid(true)
-    //     }
-    //     setName(event.target.value);
-    // }
-
-    // const emailHandler = (event) => {
-    //     if(event.target.value.trim().length > 0) {
-    //         setIsValid(true)
-    //     }
-    //     setEmail(event.target.value);
-    // }
-
-    // const orderSubmitHandler = (event) => {
-    //     event.preventDefault();
-    //     if(cardNumber.length < 17) {
-    //         setIsValid(false);
-    //         return;
-    //     }
-    //     if(cvv.length > 3) {
-    //         setIsValid(false);
-    //         return;
-    //     }
-    //     if(email.length === 0) {
-    //         setIsValid(false);
-    //         return;
-    //     }
-    //     if(name.length === 0) {
-    //         setIsValid(false);
-    //     }
-    // }
     
     return(
         <div className={classes['checkout-primary']}>

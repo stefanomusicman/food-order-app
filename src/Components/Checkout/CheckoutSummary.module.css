@@ -61,3 +61,11 @@
 .order-summary__footer div {
     font-size: 25px;
 }
+
+@media (max-width: 1200px) {
+    .order-summary__conatiner {
+        margin-left: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
