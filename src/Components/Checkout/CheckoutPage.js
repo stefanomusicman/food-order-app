@@ -26,7 +26,6 @@ const CheckoutPage = () => {
                     <input type='string' placeholder="Name on Card" />
                     <input type='email' placeholder='Email' />
                 </div>
-                {/* {!isValid && <p>*Please verify that all fields have been filled out correctly</p>} */}
                 <div className={classes['payment-button__container']}>
                     <div className={classes['payment-button__submit']}>
                         <button type="submit">Submit Order</button>

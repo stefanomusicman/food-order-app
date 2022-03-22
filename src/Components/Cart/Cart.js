@@ -1,6 +1,4 @@
 import React, {useContext} from "react";
-// import { getProductById } from "../Menu/MenuContainer";
-// import { getPriceForQuantity } from "../Menu/MenuContainer";
 import { Link } from "react-router-dom";
 import classes from './Cart.module.css';
 import { BsCart } from 'react-icons/bs';
@@ -56,7 +54,7 @@ const Cart = () => {
                             <button disabled={el.quantity === 1} onClick={() => handleDecreaseQuantity(el.id)}>-</button>
                             <button onClick={() => handleDelete(el.id)}><BsTrash /></button>
                         </div>
-                   </div>)}
+                    </div>)}
                    {items.length === 0 && <p style={{fontSize: '25px'}}>Your Cart is Empty</p>}
                 </div>
                 <div className={classes['cart-footer__container']}>

@@ -48,16 +48,6 @@ export const menuItems = [
     }
   ];
 
-// export const getPriceForQuantity = (id, quantity) => {
-//   return menuItems.find(item => item.id === id).price * quantity;
-// }
-
-// export const getProductById = (id) => {
-//   return menuItems.find(item => item.id === id);
-// }
-
-
-
 const MenuContainer = () => {
     return(
         <div className={classes['menu-container']}>

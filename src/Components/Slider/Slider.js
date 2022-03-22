@@ -27,11 +27,9 @@ const reviews = {
 const Slider = () => {
 
     const [current, setCurrent] = useState(reviews[0]);
-    // const [clicked, setIsClicked] = useState(false);
 
     const handleSetClick = (event) => {
         setCurrent(reviews[event.target.getAttribute('data-quote')]);
-        // setActive(true)        
     } 
 
     return(

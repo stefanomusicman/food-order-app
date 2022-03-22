@@ -2,7 +2,6 @@ import React, {  useState, useContext } from "react";
 import { menuItems } from "./MenuContainer";
 import { BsCart } from 'react-icons/bs';
 import classes from './AddToCartButton.module.css';
-// import { addProductToCart } from "../Cart/Cart";
 import { CartContext } from "../../Context/CartContext";
 
 const AddToCartButton = (props) => {
@@ -14,11 +13,7 @@ const AddToCartButton = (props) => {
     const name = props.name;
     const price = props.price
 
-    // const [quantity, setQuantity] = useState(1);
     const [message, setMessage] = useState('Add To Cart');
-    // const quantityHandler = (event) => {
-    //     setQuantity(event.target.value);
-    // }
 
     const getPriceForQuantity = (id, quantity) => {
       return menuItems.find(item => item.id === id).price * quantity;
@@ -53,21 +48,14 @@ const AddToCartButton = (props) => {
         price: price
       }
       
-      // setItems([...items]); ******problem is here******
-      // if i do this setItems(prevItems => [...prevItems, itemToAdd]).......the counter will work
       addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image, itemToAdd.name, itemToAdd.price)
-      // addProductToCart(itemToAdd.id, itemToAdd.quantity, itemToAdd.image, itemToAdd.name, itemToAdd.price);
 
-      
-      // setQuantity(1);
       setMessage('Done!')
     }
 
     return (
         <>
           <form onSubmit={submitHandler} className={classes.form} >
-            {/* <label htmlFor="quantity">Qty</label> */}
-            {/* <input onChange={quantityHandler} type='number' value={quantity} min={1}></input> */}
             <button type="submit" className={classes.button}>
               <BsCart className={classes.icon} />
               <span>{message}</span>

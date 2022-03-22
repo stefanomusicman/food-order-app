@@ -76,6 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 3em;
 }
 
 .payment-button__container button {
@@ -87,7 +88,6 @@
     color: white;
     transition: transform 300ms;
     cursor: pointer;
-    /* font-size: 10px; */
 }
 
 .payment-button__container  button:hover,
@@ -126,8 +126,16 @@
         padding-top: 30px;
     }
 
+    .checkout-container {
+        width: 80%;
+    }
+
     .payment-button__container button {
         width: 10em;
         height: 5em;
+    }
+
+    .payment-button__submit {
+        margin-left: 5em;
     }
 }

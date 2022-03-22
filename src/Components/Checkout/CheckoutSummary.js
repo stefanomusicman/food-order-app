@@ -9,22 +9,22 @@ const CheckoutSummary = () => {
 
     return(
         <div className={classes['order-summary__conatiner']}>
-                <h1 style={{fontFamily: 'Abel'}}>Order Summary</h1>
-                <div className={classes['summary-items__container']}>
-                    {items.map((el, i) => <div className={classes['order-item']} key={i} >
-                        <div className={classes['order-item__img']}>
-                            <img src={el.image} alt="checkout-item"/>
-                        </div>
-                        <div className={classes['order-item__info']}>
-                            <h3>{el.quantity}</h3>
-                            <h3>{el.name}</h3>
-                            <h3>{el.price}</h3>
-                        </div>
-                    </div>)}
-                </div>
-                <div className={classes['order-summary__footer']}>
-                    <div>Total Amount: {total.toFixed(2)}$</div>
-                </div>
+            <h1 style={{fontFamily: 'Abel'}}>Order Summary</h1>
+            <div className={classes['summary-items__container']}>
+                {items.map((el, i) => <div className={classes['order-item']} key={i} >
+                    <div className={classes['order-item__img']}>
+                        <img src={el.image} alt="checkout-item"/>
+                    </div>
+                    <div className={classes['order-item__info']}>
+                        <h3>{el.quantity}</h3>
+                        <h3>{el.name}</h3>
+                        <h3>{el.price}</h3>
+                    </div>
+                </div>)}
+            </div>
+            <div className={classes['order-summary__footer']}>
+                <div>Total Amount: {total.toFixed(2)}$</div>
+            </div>
         </div>
     )
 }
